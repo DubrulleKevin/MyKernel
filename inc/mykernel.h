@@ -4,7 +4,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#include "term.h"
+#include "mykernelterm.h"
  
 #if defined(__linux__)
 	#error "This code must be compiled with a cross-compiler"
@@ -13,7 +13,8 @@
 #endif
 
 #define WELCOME1 \
-" Welcome my son\n \
+" \t Welcome to the machine\n\n \
+Welcome my son\n \
 Welcome to the machine\n \
 Where have you been? It's alright, we know where you've been\n\n \
 You've been in the pipeline, filling in time\n \

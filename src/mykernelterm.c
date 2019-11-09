@@ -1,7 +1,7 @@
-#include "term.h"
+#include "mykernelterm.h"
 
 
-static void MyKernelTermPutc(MyKernelTerm* myKernelTerm, char c)
+static void myKernelTermPutc(MyKernelTerm* myKernelTerm, char c)
 {
 	switch (c)
 	{
@@ -40,7 +40,7 @@ static void MyKernelTermPutc(MyKernelTerm* myKernelTerm, char c)
 	}
 }
 
-static void MyKernelTermPrint(MyKernelTerm* term, const char* str)
+static void myKernelTermPrint(MyKernelTerm* term, const char* str)
 {
 	size_t i;
 	for (i = 0; str[i] != '\0'; i ++)
@@ -52,11 +52,10 @@ static void MyKernelTermPrint(MyKernelTerm* term, const char* str)
 MyKernelTerm myKernelTermNew(void) {
 	MyKernelTerm myKernelTerm;
 	
-	int col;
-	int row;
+	int col, row;
 	
-	myKernelTerm.putc = &MyKernelTermPutc;
-	myKernelTerm.print = &MyKernelTermPrint;
+	myKernelTerm.putc = &myKernelTermPutc;
+	myKernelTerm.print = &myKernelTermPrint;
 	
 	myKernelTerm.vga_buffer = (uint16_t*)0xB8000;
 	myKernelTerm.term_col = 0;
