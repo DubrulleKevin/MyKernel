@@ -3,7 +3,8 @@
 	
 MyKernel myKernelNew(void) {
 	MyKernel myKernel;
-	myKernel.term = myKernelTermNew();
+	
+	myKernel.console = myKernelConsoleNew(COM1);
 	
 	return myKernel;
 }
