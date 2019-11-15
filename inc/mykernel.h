@@ -10,6 +10,8 @@
 	#error "This code must be compiled with an x86-elf compiler"
 #endif
 
+#define TERMINAL_BUFFER 0xC03FF000
+
 #define WELCOME1 \
 "\t Welcome to the machine\n\n\
 Welcome my son\n\
