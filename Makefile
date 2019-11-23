@@ -39,7 +39,4 @@ clobber:
 	$(RM) $(OBJ)
 	
 run: $(EXE)
-	$(QEMU) $(EXE)
-
-run_serial: $(EXE)
 	$(QEMU) $(EXE) -chardev socket,id=tty0,host=127.0.0.1,port=5555,server,telnet -serial chardev:tty0 -nographic
